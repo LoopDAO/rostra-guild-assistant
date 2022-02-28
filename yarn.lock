@@ -1057,10 +1057,10 @@ discord.js@^13.6.0:
     node-fetch "^2.6.1"
     ws "^8.4.0"
 
-discordx@^9.2.5:
-  version "9.3.2"
-  resolved "https://registry.yarnpkg.com/discordx/-/discordx-9.3.2.tgz#14a00ee0d0a16c1ab3777932a77805a97ad371dd"
-  integrity sha512-8V70grBcHoLlXL0S2ftHQPJJpR9WcdOJ/JEKgMyIjhIHCTq6P46xXvA2m4EOdihj1iXVx9P52fwAG4t8es0reA==
+discordx@^9.3.4:
+  version "9.3.4"
+  resolved "https://registry.yarnpkg.com/discordx/-/discordx-9.3.4.tgz#6431a10598ca911c4a7ba922b368dd3858078237"
+  integrity sha512-Mi05xQ361vtKMp8hfZaQyZ26OQx0mgN0R5DbfZsyy/jI5071It96ExHfGMbnM4ktX8lpUACleX7oHUAPzObK7w==
   dependencies:
     "@discordx/di" "^1.0.2"
     "@discordx/internal" "^1.0.2"
