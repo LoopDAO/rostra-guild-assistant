@@ -292,7 +292,7 @@
     axios "0.21.4"
     tslib "2.3.1"
 
-"@nervosnetwork/ckb-sdk-utils@0.102.1", "@nervosnetwork/ckb-sdk-utils@^0.102.1":
+"@nervosnetwork/ckb-sdk-utils@0.102.1":
   version "0.102.1"
   resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-sdk-utils/-/ckb-sdk-utils-0.102.1.tgz#5e9bd9e2ebfbbd7b55f915e087e5cbd557bab34f"
   integrity sha512-M+6P+8qhXiJoV5e77KtCLQQoKvuOAYdaCd6FEF5V6OhURbkRdhy6gxulY2YB7chlaw7QbvPhlVHlWB1DFOjkHw==
@@ -303,10 +303,26 @@
     jsbi "3.1.3"
     tslib "2.3.1"
 
+"@nervosnetwork/ckb-sdk-utils@^0.102.2":
+  version "0.102.2"
+  resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-sdk-utils/-/ckb-sdk-utils-0.102.2.tgz#726285d1345b25fa15762aa483ca0b3349944cf1"
+  integrity sha512-s+KKS6J9V4SWAApSkBCWiGWSo1aybm0v2LSCP2lAF/IhzhCb/BWR2ZMOMoBBFaA9GCEsoZYXpQBG1o1XgGPo/w==
+  dependencies:
+    "@nervosnetwork/ckb-types" "0.102.2"
+    bech32 "2.0.0"
+    elliptic "6.5.4"
+    jsbi "3.1.3"
+    tslib "2.3.1"
+
 "@nervosnetwork/ckb-types@0.102.1":
   version "0.102.1"
   resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-types/-/ckb-types-0.102.1.tgz#95278bfdbc489ad6225ed8125a235ee7ba378882"
   integrity sha512-WFE/wPwZm+UYpgKmP2QX2zQyzCkAocfjQyP8DWJds3KhsI+7Z9EjFZ3lzDEWclU/KokC1fOd9+Bu5DMrfkcZng==
+
+"@nervosnetwork/ckb-types@0.102.2":
+  version "0.102.2"
+  resolved "https://registry.yarnpkg.com/@nervosnetwork/ckb-types/-/ckb-types-0.102.2.tgz#6f781419b0e837356ab63fec116031c4dcf40998"
+  integrity sha512-bnocHxyKs2cHQPJGlICJO4S5tAnPoQCGTlo0TefI6x1am7FXJoxNyS2djmmOTFnDFdMy4BhH3WsIaAmhT1TT9w==
 
 "@panva/asn1.js@^1.0.0":
   version "1.0.0"
@@ -2478,10 +2494,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.4.4, typescript@^4.5.5:
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
-  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
+typescript@^4.4.4, typescript@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.2.tgz#fe12d2727b708f4eef40f51598b3398baa9611d4"
+  integrity sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==
 
 undefsafe@^2.0.5:
   version "2.0.5"
