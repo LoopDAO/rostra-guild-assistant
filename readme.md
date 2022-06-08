@@ -1,173 +1,45 @@
-<div>
-  <p align="center">
-    <a href="https://discord-ts.js.org" target="_blank" rel="nofollow">
-      <img src="https://discord-ts.js.org/discord-ts.svg" width="546" />
-    </a>
-  </p>
-  
-  <p align="center">
-    <a href="https://discord.gg/yHQY9fexH9"
-      ><img
-        src="https://img.shields.io/discord/874802018361950248?color=5865F2&logo=discord&logoColor=white"
-        alt="Discord server"
-    /></a>
-    <a href="https://www.npmjs.com/package/discordx"
-      ><img
-        src="https://img.shields.io/npm/v/discordx.svg?maxAge=3600"
-        alt="NPM version"
-    /></a>
-    <a href="https://www.npmjs.com/package/discordx"
-      ><img
-        src="https://img.shields.io/npm/dt/discordx.svg?maxAge=3600"
-        alt="NPM downloads"
-    /></a>
-    <a href="https://github.com/oceanroleplay/discord.ts/actions"
-      ><img
-        src="https://github.com/oceanroleplay/discord.ts/workflows/Build/badge.svg"
-        alt="Build status"
-    /></a>
-    <a href="https://www.paypal.me/vijayxmeena"
-      ><img
-        src="https://img.shields.io/badge/donate-paypal-F96854.svg"
-        alt="paypal"
-    /></a>
-  </p>
-  <p align="center">
-    <b> Create a discord bot with TypeScript and Decorators! </b>
-  </p>
-</div>
-
-# Content
-
-- [Installation](#installation)
-- [Use global command only](#use-global-command-only)
-- [Use CommonJS](#use-commonjs)
-- [Remove rest api server](#remove-rest-api-server)
-
-# Installation
-
-**Clone Repository**
-
-```bash
-git clone https://github.com/rebase-network/rostra-guild-assistant
+### 1 Create .env：
 ```
-
-**Install Dependencies**
-
-```bash
-yarn
+BOT_TOKEN=OTgzOTkyODM1MDQyODU3OTgw.GIHsrC.sFfejO88t1ISIRw1AKU8A6XVsX6smVnq7gK1Z8
+BOT_MANAGER_ROLE=bot_manager_role
+BOT_ROLE=bot_role
+DISCORD_VERIFICATION_SECRET=OTcyODQ5NDUyNTUxMzg5MjE0
+#development, production
+ENVIRONMENT=development
+WALLET_SIGN_REDIRECT_URL=http://localhost:3000/sign-success
+#testnet,mainnet
+NERVINA_CHAIN_TYPE=testnet
 ```
+### 2.Get BOT_TOKEN：https://discord.com/developers/applications
+- a. New Application
+![C824CC3A-7E7F-47CF-9FBE-C3C7A0D8B3F3](https://user-images.githubusercontent.com/3693411/172654229-79ecee70-2b49-4d94-a8bc-81734d588ca9.png)
 
-**Run your bot in dev env**
+- b. Create App，
+![561C3865-3341-4B17-9E21-0AD382679E12](https://user-images.githubusercontent.com/3693411/172654279-d24ddda0-2d27-44ed-8824-d568e6d9434f.png)
 
-```bash
-npm run start
-```
 
-**Build your bot**
+- c. Create Bot
+  ![9643C218-6F2A-487E-BC10-D9A1ED8BD7A7](https://user-images.githubusercontent.com/3693411/172654312-1d779ac1-ef6c-4c4b-8208-5c726ee251f3.png)
 
-```bash
-npm run build
-```
+- d.Reset TOKEN
+  ![59DA52C8-CB10-4197-A40A-AC54BB406B1C](https://user-images.githubusercontent.com/3693411/172654347-07680f4c-7229-4a34-801c-e6af273eaa69.png)
 
-**Set your bot token**
+- e.Privileged Gateway Intents
 
-For windows user only
 
-```bash
-# For command prompt
-set BOT_TOKEN=REPLACE_THIS_WITH_YOUR_TOKEN
 
-# For powershell
-$env:BOT_TOKENS = "REPLACE_THIS_WITH_YOUR_TOKEN"
-```
+### 3.邀请 bot 加入自己的group,OAuth2 -》URL Generator -》copy。
+    设置需要赋予bot的基本权限，然后通过copy获得邀请url，通过浏览器访问该url即可邀请bot进到自己的群组。
 
-For linux user only
+![41452008-3083-4113-A798-147781C925A5](https://user-images.githubusercontent.com/3693411/172654530-f7b2dd2f-4d6e-4bb3-8f68-47b42871711e.png)
+![84CE5190-80A9-4797-AEA8-531A4870E011](https://user-images.githubusercontent.com/3693411/172654582-96f3f9c9-7c5e-4f2c-a4ec-68732292d359.png)
 
-```bash
-export BOT_TOKEN=REPLACE_THIS_WITH_YOUR_TOKEN
-```
+![B0BE937B-E9EE-4963-902E-DC6D04DAC9EB](https://user-images.githubusercontent.com/3693411/172654626-768173ce-6cd4-476b-8c57-6749b69bf264.png)
 
-**Start your bot**
 
-```bash
-npm run serve
-```
+### 4.启动程序 yarn start
+<img width="997" alt="C54F1D48-73E5-449C-BB97-DEB59523FB1D" src="https://user-images.githubusercontent.com/3693411/172654747-4dfb4b3f-a10f-4b47-9531-e6f0c01427a4.png">
 
-you are done, you will see your bot up and running. For detailed installation guide, please [see this](https://oceanroleplay.github.io/discord.ts/docs/installation)
 
-# Use global command only
-
-This repository uses guild commands instead of global commands by default. This is because global command needs approximately 15 minutes to update itself every time.
-
-## 1. How do I use global command only?
-
-### comment [this line in main.ts](https://github.com/rebase-network/rostra-guild-assistant/blob/main/src/main.ts#L23)
-
-## 2. How do I make specific guild command?
-
-### use [@Guild](https://discord-ts.js.org/docs/decorators/general/guild) decorator on [@Slash](https://discord-ts.js.org/docs/decorators/commands/slash), [check more information](https://discord-ts.js.org/docs/decorators/general/guild)
-
-# Use CommonJS
-
-This repo is targed to use ECMAScript modules by default. Follow these steps to use CommonJS.
-
-## Update package.json
-
-```json
-{
-  // ...
-  "type": "commonjs",
-  // ...
-  "scripts": {
-    "build": "tsc",
-    "dev": "ts-node src/main.ts",
-    "start": "nodemon --exec ts-node src/main.ts",
-    "serve": "node build/main.js"
-  }
-  // ...
-}
-```
-
-## Update tsconfig.json
-
-```json
-{
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS"
-    // ...
-  }
-}
-```
-
-## Update main.ts
-
-```ts
-async function run() {
-  // with cjs
-  await importx(__dirname + '/{events,commands}/**/*.{ts,js}')
-  // with ems
-  // await importx(dirname(import.meta.url) + "/{events,commands}/**/*.{ts,js}");
-  client.login(process.env.BOT_TOKEN ?? '') // provide your bot token
-}
-```
-
-# Remove rest api server
-
-There are only a few lines of basic code, which you need to either comment out or remove to disable the API server
-
-1. Delete the `api` folder from the [src folder](https://github.com/oceanroleplay/discord.ts-example/tree/main/src)
-1. Remove api reference from importx path in [main.ts#L57](https://github.com/oceanroleplay/discord.ts-example/blob/main/src/main.ts#L57)
-1. Comment out or remove the code from [main.ts#L5](https://github.com/oceanroleplay/discord.ts-example/blob/main/src/main.ts#L5) and [main.ts#L66](https://github.com/oceanroleplay/discord.ts-example/blob/main/src/main.ts#L66) - [main.ts#L81](https://github.com/oceanroleplay/discord.ts-example/blob/main/src/main.ts#L81)
-1. Run `npm uninstall koa @koa/router @discordx/koa @types/koa @types/koa__router`
-
-The API server has been removed from the discord bot
-
-# ☎️ Need help?
-
-Ask in **[discord server](https://discord.gg/yHQY9fexH9)** or open a **[issue](https://github.com/oceanroleplay/discord.ts-example/issues)**
-
-# Thank you
-
-Show your support for [discordx](https://www.npmjs.com/package/discordx) by giving us a star on [github](https://github.com/oceanroleplay/discord.ts).
+### 5 使用NFT相关命令：
+![F5737BA1-E9A0-4D36-882D-2781CF02F8F4](https://user-images.githubusercontent.com/3693411/172654801-cd81876e-e197-4b4e-8e99-9ba1ae924788.png)
