@@ -54,4 +54,21 @@ NERVINA_CHAIN_TYPE=testnet
 * /remove-rule
 * /view-rules
 
-### 5 Create Rule
+# How to Add Rules to a Discord Server on a PC
+Once your server is converted into a community server, you can add your Discord server rules. Here are the steps to do that using the desktop app:
+
+1. Launch the Discord web or desktop app and sign in.
+
+2. Navigate to your community server, then on the top left, click the server’s name and choose “Server Settings.”
+
+3. Click on “Membership Screening” beneath the “Community” section on the left sidebar.
+
+4. To add the server rules, toward the bottom of the page, click “Get Started.”
+
+5. .Enter the rule you wish to implement on your server or choose from the set of example rules.
+
+6. Click “Add a rule” for more rules, then “Save” after adding each rule.
+
+7. Next, you’ll need to add a server description before the rules are active. Under “Description,” briefly introduce the server, then click “Enable.”
+
+Once the “Membership Screening” feature is enabled, new members will need to agree to your rules before sending messages and reactions on one of the channels.
