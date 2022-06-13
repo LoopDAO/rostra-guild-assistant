@@ -1,3 +1,4 @@
+# Run ckb-nft-discord-bot Server 
 ### 1 Create .env：
 ```
 BOT_TOKEN=OTgzOTkyODM1MDQyODU3OTgw.GIHsrC.sFfejO88t1ISIRw1AKU8A6XVsX6smVnq7gK1Z8
