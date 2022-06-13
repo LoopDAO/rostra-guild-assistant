@@ -79,13 +79,13 @@
   resolved "https://registry.npmmirror.com/@discordjs/collection/-/collection-0.7.0.tgz#1a6c00198b744ba2b73a64442145da637ac073b8"
   integrity sha512-R5i8Wb8kIcBAFEPLLf7LVBQKBDYUL+ekb23sOgpkpyGT+V4P7V83wTxcsqmX+PbqHt4cEHn053uMWfRqh/Z/nA==
 
-"@discordx/changelog@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.npmjs.org/@discordx/changelog/-/changelog-2.0.7.tgz"
-  integrity sha512-yJNuVRRrDXQkyTwyg2Jgy3sPxo5K2pc9toisuEDT64F0EwZMUjFtFThVdzR/AMjgyPQVI+ZIAXGv+b5lDtAAsA==
+"@discordx/changelog@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@discordx/changelog/-/changelog-2.0.8.tgz#e1bb3d0bc1c562a4513b1bbe6a62fb804420ff3c"
+  integrity sha512-nmrZCD1K/PHB6l8xCmrQL9LZQXTvlk/MAVz0l1YD92eDkSpsjSgq2bG7v78k4OzalSat3AVQft3IKmGBXIMMag==
   dependencies:
     lodash "^4.17.21"
-    prettier "^2.5.1"
+    prettier "^2.6.2"
     tslib "^2.3.1"
 
 "@discordx/di@^1.0.2":
@@ -2220,7 +2220,7 @@ prepend-http@^2.0.0:
   resolved "https://registry.npmjs.org/prepend-http/-/prepend-http-2.0.0.tgz"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^2.5.1, prettier@^2.6.0:
+prettier@^2.6.0, prettier@^2.6.2:
   version "2.6.2"
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.6.2.tgz"
   integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
@@ -2552,7 +2552,7 @@ ts-node@^10.7.0:
     v8-compile-cache-lib "^3.0.0"
     yn "3.1.1"
 
-tslib@2.3.1, tslib@^2.1.0, tslib@^2.3.1:
+tslib@2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
@@ -2562,7 +2562,7 @@ tslib@^1.9.3:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.4.0:
+tslib@^2.1.0, tslib@^2.3.1, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
