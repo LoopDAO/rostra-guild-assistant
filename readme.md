@@ -1,3 +1,4 @@
+# Run ckb-nft-discord-bot Server 
 ### 1 Create .env：
 ```
 BOT_TOKEN=OTgzOTkyODM1MDQyODU3OTgw.GIHsrC.sFfejO88t1ISIRw1AKU8A6XVsX6smVnq7gK1Z8
@@ -53,4 +54,16 @@ NERVINA_CHAIN_TYPE=testnet
 * /remove-rule
 * /view-rules
 
-### 5 Create Rule
+# How to Add Rules to a Discord Server on a PC
+Once your server is converted into a community server, you can add your Discord server rules. Here are the steps to do that using the desktop app:
+
+1. Launch the Discord web or desktop app and sign in.
+![image](https://user-images.githubusercontent.com/3693411/173373128-794bb62c-901d-4613-9037-a035ac71d587.png)
+
+2. Navigate to your community server, then on the top left,Right click the server’s name and choose “Server Settings.”-> "Roles" then click "Create Role"
+![image](https://user-images.githubusercontent.com/3693411/173373862-da745e27-96cc-4541-8da7-7a1e57c51eb4.png)
+![image](https://user-images.githubusercontent.com/3693411/173374732-6e1e10fc-227e-44b0-ba79-6411aab75d20.png)
+
+3. Click on “Create Role” Fill in the Role name and click "Save Changes".
+![image](https://user-images.githubusercontent.com/3693411/173375061-a3fb8e99-b998-49af-b193-2366f3fbaf31.png)
+
