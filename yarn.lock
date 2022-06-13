@@ -88,13 +88,6 @@
     prettier "^2.5.1"
     tslib "^2.3.1"
 
-"@discordx/di@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@discordx/di/-/di-1.0.2.tgz"
-  integrity sha512-Z4dQ18L6oC28pQ+giW3XlKvozLyguivKsvERcTOG6ZpUtPbzvjmNDQAYXNYwsscKEIl7QRq5Qfs+8WeRl1mudA==
-  dependencies:
-    tsyringe "^4.6.0"
-
 "@discordx/di@^2.0.1":
   version "2.0.1"
   resolved "https://registry.npmmirror.com/@discordx/di/-/di-2.0.1.tgz#024af39abc81f6b4811760226e72fa36da17434f"
@@ -119,14 +112,14 @@
   dependencies:
     tslib "^2.3.1"
 
-"@discordx/koa@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/@discordx/koa/-/koa-1.0.7.tgz"
-  integrity sha512-3T+i9Cfe+QZf7rEflT59/rqrjmWwZ54PRCv2OYnsYvtOSQo1SvPixgEU7UM+6XuJ76f9NK9cQciEgPdDDxfNFQ==
+"@discordx/koa@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@discordx/koa/-/koa-1.1.0.tgz#e067753bb66b59440ced2872a27292f4cc0d2c33"
+  integrity sha512-3Y9EbhYvMXT1SjKowWOJzhMI2z0p1ZhxIC0WFPO12C4VMXUUJmg4lDyK9DN4piRxaF/u+NBToz+HRJGJMbbe2w==
   dependencies:
-    "@discordx/di" "^1.0.2"
+    "@discordx/di" "^2.0.1"
     "@discordx/internal" "^1.0.2"
-    tslib "^2.3.1"
+    tslib "^2.4.0"
 
 "@discordx/pagination@^2.0.1":
   version "2.1.1"
@@ -2552,7 +2545,7 @@ ts-node@^10.7.0:
     v8-compile-cache-lib "^3.0.0"
     yn "3.1.1"
 
-tslib@2.3.1, tslib@^2.1.0, tslib@^2.3.1:
+tslib@2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
@@ -2562,7 +2555,7 @@ tslib@^1.9.3:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.4.0:
+tslib@^2.1.0, tslib@^2.3.1, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==

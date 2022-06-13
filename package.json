@@ -35,7 +35,7 @@
   "dependencies": {
     "@ckb-lumos/base": "^0.17.0-rc9",
     "@discordx/importer": "^1.1.2",
-    "@discordx/koa": "^1.0.7",
+    "@discordx/koa": "^1.1.0",
     "@discordx/pagination": "^2.0.1",
     "@discordx/utilities": "^4.1.0",
     "@koa/router": "^10.1.1",
