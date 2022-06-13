@@ -94,7 +94,7 @@ export class API {
         if (userDoc.exists && userDoc.data()!.wallet === address) {
             console.log('User info already exists',address)
             context.body = `You already have this role`
-            return
+            //return
         }
         const guildConfigDoc = await db
             .collection('guildConfigs')
