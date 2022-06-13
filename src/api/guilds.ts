@@ -1,7 +1,7 @@
 import { Get, Router } from '@discordx/koa'
 import type { Context } from 'koa'
 import { client } from '../main.js'
-import { generateFlashsignerAddress,Config } from '@nervina-labs/flashsigner'
+import { generateFlashsignerAddress, Config } from '@nervina-labs/flashsigner'
 import NodeRsa from 'node-rsa'
 import { Buffer } from 'buffer'
 import db from '../database'
@@ -13,13 +13,10 @@ import { getCotaCount } from '../service/cotaQuery'
 
 dotenv.config()
 
-const NERVINA_CHAIN_TYPE = process.env.NERVINA_CHAIN_TYPE=='testnet' ?'testnet':'mainnet'
-const DISCORD_VERIFICATION_SECRET =
+const NERVINA_CHAIN_TYPE = process.env.NERVINA_CHAIN_TYPE == 'testnet' ? 'testnet' : 'mainnet'
+export const DISCORD_VERIFICATION_SECRET =
     process.env.DISCORD_VERIFICATION_SECRET || 'secret'
-console.log(
-    'DISCORD_VERIFICATION_SECRET: ',
-    process.env.DISCORD_VERIFICATION_SECRET
-)
+console.log('DISCORD_VERIFICATION_SECRET: ',DISCORD_VERIFICATION_SECRET)
 
 @Router()
 export class API {
@@ -63,19 +60,27 @@ export class API {
             Buffer.from(response.message),
             Buffer.from(response.signature, 'hex')
         )
-
-        context.body = `Signature verified result: ${isSigValid}`
-
-        if (!isSigValid) return
-        //Config.setChainType('mainnet' /* or 'testnet' */)
+        if (!isSigValid) {
+            context.body = `Signature verified result: ${isSigValid}`
+            console.log('Signature verification failed')
+            return
+        }
         Config.setChainType(NERVINA_CHAIN_TYPE)
         const address = generateFlashsignerAddress(response.pubkey)
-        console.log('address: ',NERVINA_CHAIN_TYPE, address)
+        console.log('setChainType: ', NERVINA_CHAIN_TYPE, address)
 
-        const decoded = jwt.verify(
-            message,
-            DISCORD_VERIFICATION_SECRET
-        ) as jwt.JwtPayload
+        let decoded
+        try {
+            decoded = jwt.verify(
+                message,
+                DISCORD_VERIFICATION_SECRET
+            ) as jwt.JwtPayload
+        }
+        catch (e) {
+            console.error('JWT verification failed:', e)
+            context.body = `Sign verification failed`
+            return
+        }
         const { userId, guildId } = decoded
 
         const user: User = {
@@ -87,69 +92,79 @@ export class API {
         const docKey = `${guildId}-${userId}`
         const userDoc = await db.collection('users').doc(docKey).get()
         if (userDoc.exists && userDoc.data()!.wallet === address) {
-            console.log('User info already exists')
-            context.body = `User info already exists: ${address}`
+            console.log('User info already exists',address)
+            context.body = `You already have this role`
             return
         }
         const guildConfigDoc = await db
-        .collection('guildConfigs')
-        .doc(guildId)
-        .get()
+            .collection('guildConfigs')
+            .doc(guildId)
+            .get()
 
-        const guildConfigRules = (guildConfigDoc.data() as GuildConfig).rules
-
+        const guildConfigRules = (guildConfigDoc.data() as GuildConfig)?.rules
+        console.log('guildConfigRules: ', guildConfigRules)
         const guild = await client.guilds.fetch(guildId)
         const member = await guild.members.fetch(userId)
 
-        const roleNames: string[] = []
-        guildConfigRules.forEach(async (guildRule: GuildRule) => {
-            if (Object.keys(guildRule.nft).length === 1) {
-                const nftAddresses = Object.keys(guildRule.nft)
-                // TODO: check if user's address has nfts
-                const address = nftAddresses[0]
-                
-                const rs = await getCotaCount(user.wallet,address)
-                console.log(`getCotaCount: ${rs}-${user.wallet}-${address}`)
-                const hasNft = rs > 0 
-                if (hasNft && !roleNames.includes(guildRule.roleName)) {
-                    roleNames.push(guildRule.roleName)
+        const { isqualified, rolename } = await isQualified(user.wallet, guildConfigRules)
+        console.log('qualified: ', isqualified)
 
-                    const role = guild.roles.cache.find((el) => el.name == guildRule.roleName)!
-                    try {
-                        role && member.roles.add(role)
-                        console.log('role added: ', guildRule.roleName)
-                    } catch (err) {
-                        console.error('Error happened for adding role: ', err)
-                    }
+        if (isqualified) {
 
-                }
-                if (hasNft) {
-                    try {
-                        await db.collection('users').doc(docKey).set(user)
-                        context.body = "link ckb wallet success!"
-                        //return
-                    } catch (error) {
-                        console.error('Error happened for saving user info: ', error)
-                    }
-                } 
-                context.body = `Current User has no NFT(${user.wallet})`
+            const role = guild.roles.cache.find((el) => el.name == rolename)!
+            try {
+               console.log('Adding role: ', role.name)
+               if(role)await member.roles.add(role)
+                console.log('role added: ', rolename)
+            } catch (err) {
+                console.error('Error happened for adding role: ', err)
+                return context.body = `Error happened for adding role: ${err}`
             }
-        })
-        // if (roleNames.length > 0) {
-        //     roleNames.forEach((name: string) => {
-        //         const role = guild.roles.cache.find((el) => el.name == name)!
-        //         try {
-        //             role && member.roles.add(role)
-        //             console.log('role added: ', name)
-        //         } catch (err) {
-        //             console.error('Error happened for adding role: ', err)
-        //         }
-
-        //     })
-        // }
+            try {
+                db.collection('users').doc(docKey).set(user)
+                context.body = "link ckb wallet success!. You have been set to role "+rolename
+            } catch (error) {
+                console.error('Error happened for saving user info: ', error)
+                return context.body = `Error happened for saving user info: ${error}`
+            }
+            return
+        }
+        console.log('User is not qualified ',user.wallet)
+        context.body = `Current User has no NFT`
     }
 }
+async function isQualified(account: string, rules: any): Promise<{ isqualified: boolean; rolename: string }> {
+    try {
+        const condition = "and"
+        console.log("condition...", condition)
+        for (let i = 0;i < rules.length;i++) {
+            const { nft } = rules[i]
+            console.log("nft...", nft)
+            const address = Object.keys(nft)[0]
+            console.log("address...", address)
 
+            const quantity = nft[address].quantity
+            console.log("quantity...", quantity)
+            const rs = await getCotaCount(account, address)
+            console.log("rs...", rs)
+            if (condition.toLowerCase() === "and") {
+                if (!rs || rs < quantity) {
+                    console.log(`"not qualified... index:${i}, nfts:${rs},quantity:${quantity}`)
+                    return { isqualified: false, rolename: rules[i].roleName }
+                }
+                return { isqualified: true, rolename: rules[i].roleName }
+            } else {
+                if (rs && rs >= quantity) {
+                    console.log(`"is qualified... index:${i}, nfts:${rs},quantity:${quantity}`)
+                    return { isqualified: true, rolename: rules[i].roleName }
+                }
+            }
+        }
+    } catch (error) {
+        console.error('Error happened for checking cota: ', error)
+    }
+    return { isqualified: false, rolename: "" }
+}
 function ChainType(arg0: string): string | undefined {
     throw new Error('Function not implemented.')
 }

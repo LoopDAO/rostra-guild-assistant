@@ -18,7 +18,6 @@ export const getCotaCount = async (account: string, contractAddress: string) => 
     const params = { lockScript, cotaId: contractAddress }
     const cotaCount = await aggregator.getCotaCount(params)
 
-    console.log('cotaCount:', cotaCount)
     return cotaCount?.count
 }
 

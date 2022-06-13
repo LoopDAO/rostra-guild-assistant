@@ -48,3 +48,9 @@ NERVINA_CHAIN_TYPE=testnet
 
 * /add-nft-rule 0x*** 1 group
 * /link-wallet-btn 
+
+
+* /remove-rule
+* /view-rules
+
+### 5 Create Rule

@@ -9,12 +9,11 @@ import { ButtonComponent, Discord, Slash } from "discordx"
 import jwt from "jsonwebtoken"
 import { generateSignMessageURL, Config } from "@nervina-labs/flashsigner"
 import * as dotenv from "dotenv"
+import { DISCORD_VERIFICATION_SECRET } from "../api/guilds"
 
 dotenv.config()
 
 const NERVINA_CHAIN_TYPE = process.env.NERVINA_CHAIN_TYPE=='testnet' ?'testnet':'mainnet'
-const DISCORD_VERIFICATION_SECRET = process.env.DISCORD_VERIFICATION_SECRET || ""
-console.log("DISCORD_VERIFICATION_SECRET: ", process.env.DISCORD_VERIFICATION_SECRET)
 const WALLET_SIGN_REDIRECT_URL = process.env.WALLET_SIGN_REDIRECT_URL || "http://localhost:3000/sign-success"
 @Discord()
 export abstract class LinkWallet {
