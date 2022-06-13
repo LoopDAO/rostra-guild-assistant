@@ -14,13 +14,13 @@
     js-xxhash "^1.0.4"
     lodash.isequal "^4.5.0"
 
-"@ckb-lumos/base@^0.17.0-rc9":
-  version "0.17.0-rc9"
-  resolved "https://registry.npmjs.org/@ckb-lumos/base/-/base-0.17.0-rc9.tgz"
-  integrity sha512-r57fDCOfjJD/oh8NKDg5L97zDsO1nNOipCA2koQW7dpL96SIPVo2aYK/iANM6LZW9lty1zrqVZU+GyZM4ow4hw==
+"@ckb-lumos/base@^0.18.0-rc7":
+  version "0.18.0-rc7"
+  resolved "https://registry.yarnpkg.com/@ckb-lumos/base/-/base-0.18.0-rc7.tgz#3fb48c6e5a433f1f124d7625f6a176015bbe79ee"
+  integrity sha512-xLWtl840Pn2FBQdJhSvPw0Nf9yVtTJDh3gJS0kQE/8IPUjykq6FIfFeZ2+qwlzg2LKAR0e26cXtL7UiKtp/7zw==
   dependencies:
-    "@ckb-lumos/bi" "^0.17.0-rc8"
-    "@ckb-lumos/toolkit" "0.17.0-rc9"
+    "@ckb-lumos/bi" "0.18.0-rc7"
+    "@ckb-lumos/toolkit" "0.18.0-rc7"
     "@types/lodash.isequal" "^4.5.5"
     blake2b "^2.1.3"
     js-xxhash "^1.0.4"
@@ -33,10 +33,10 @@
   dependencies:
     jsbi "^4.1.0"
 
-"@ckb-lumos/bi@^0.17.0-rc8":
-  version "0.17.0-rc8"
-  resolved "https://registry.npmjs.org/@ckb-lumos/bi/-/bi-0.17.0-rc8.tgz"
-  integrity sha512-ZHH+EydVmkVm2cw9Ytys0u5qN8M4mE+EwcVWZnrJ5PXrsOiS+jRlHCj6vrf546Sn/uBwQ6s3NZ3VhTzGN/nubw==
+"@ckb-lumos/bi@0.18.0-rc7":
+  version "0.18.0-rc7"
+  resolved "https://registry.yarnpkg.com/@ckb-lumos/bi/-/bi-0.18.0-rc7.tgz#d51e0428b2af0ff109121751211ac75ec0d0cb39"
+  integrity sha512-3We3kPMIo4Iz2V0XYaSMWhJTQi5K93mKA1jX8VQe7oLI4MLhbUl/9MyLXSwOwpBZX3u2B7ENVXAgqR8JnoBEPg==
   dependencies:
     jsbi "^4.1.0"
 
@@ -45,10 +45,10 @@
   resolved "https://registry.npmmirror.com/@ckb-lumos/toolkit/-/toolkit-0.17.0.tgz#4df2bb822b3d8de3deeee02aa8a658017efffe5c"
   integrity sha512-y9MrQMjH3qVj6bZCnps5aydu1wAwM4u/cv0c4o2AqxHNq9axIt5hZmI8Z9hswDctcyeWll1aLpYamy3Wt+wz4Q==
 
-"@ckb-lumos/toolkit@0.17.0-rc9":
-  version "0.17.0-rc9"
-  resolved "https://registry.npmjs.org/@ckb-lumos/toolkit/-/toolkit-0.17.0-rc9.tgz"
-  integrity sha512-ZT/fL1Wp6R/1iBvfx1iWKbdMsr67PsE/U0eWh55zvp9bDjRXsBuM0F7d3PVyBTKZjnIkn/FLwo5+tmaLTaGrjg==
+"@ckb-lumos/toolkit@0.18.0-rc7":
+  version "0.18.0-rc7"
+  resolved "https://registry.yarnpkg.com/@ckb-lumos/toolkit/-/toolkit-0.18.0-rc7.tgz#fdd434a8004e70df6c93674576e3f7d9573c9aa0"
+  integrity sha512-3+BSEr4S9oU7by6hFAJ8EWUDdwgvZOrwkCYPKHH5jUeT3lLvmKppoDmlsUi3DLSr5LoYf785lw2qOCI4gf4HfA==
 
 "@cspotcode/source-map-consumer@0.8.0":
   version "0.8.0"
