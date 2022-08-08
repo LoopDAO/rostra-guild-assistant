@@ -79,14 +79,14 @@
   resolved "https://registry.npmmirror.com/@discordjs/collection/-/collection-0.7.0.tgz#1a6c00198b744ba2b73a64442145da637ac073b8"
   integrity sha512-R5i8Wb8kIcBAFEPLLf7LVBQKBDYUL+ekb23sOgpkpyGT+V4P7V83wTxcsqmX+PbqHt4cEHn053uMWfRqh/Z/nA==
 
-"@discordx/changelog@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.npmjs.org/@discordx/changelog/-/changelog-2.0.7.tgz"
-  integrity sha512-yJNuVRRrDXQkyTwyg2Jgy3sPxo5K2pc9toisuEDT64F0EwZMUjFtFThVdzR/AMjgyPQVI+ZIAXGv+b5lDtAAsA==
+"@discordx/changelog@^2.0.10":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@discordx/changelog/-/changelog-2.0.10.tgz#935738bda43861e4b446d2173037737947fdcfe7"
+  integrity sha512-Qpi321zPIShJ4B7UEjAlN8ZcBfKPCGWsnpeq4W3tTN1vmCFNMghSO5xaIxTP2kUnEC+DiYaeI5qJtqW2kFiw7Q==
   dependencies:
     lodash "^4.17.21"
-    prettier "^2.5.1"
-    tslib "^2.3.1"
+    prettier "^2.7.1"
+    tslib "^2.4.0"
 
 "@discordx/di@^2.0.1":
   version "2.0.1"
@@ -2209,10 +2209,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.npmjs.org/prepend-http/-/prepend-http-2.0.0.tgz"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@^2.5.1, prettier@^2.6.0:
-  version "2.6.2"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-2.6.2.tgz"
-  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
+prettier@^2.6.0, prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 proto3-json-serializer@^0.1.8:
   version "0.1.8"
@@ -2541,7 +2541,7 @@ ts-node@^10.7.0:
     v8-compile-cache-lib "^3.0.0"
     yn "3.1.1"
 
-tslib@2.3.1, tslib@^2.1.0, tslib@^2.3.1:
+tslib@2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
@@ -2551,7 +2551,7 @@ tslib@^1.9.3:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.4.0:
+tslib@^2.1.0, tslib@^2.3.1, tslib@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmmirror.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
